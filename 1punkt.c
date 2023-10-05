@@ -3,10 +3,10 @@
 
 int main(void)
 {
-    int a, b = 5, c;
+    int a, b = 5, c; // Переменные типа int
     double x, y = -0.5, z;
-
-    printf("a=");
+    
+    printf("a="); //Выводится на экран сообщение "a=" и запрашивается ввод числа a
     scanf("%d", &a);
 
     x = c = a;

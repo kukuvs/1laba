@@ -19,9 +19,23 @@ sizeof(f)=%d\tsizeof(d)=%d\n\n", sizeof(c),
 sizeof(uc), sizeof(i), sizeof(u), sizeof(s),
 sizeof(l), sizeof(f), sizeof(d));
 
+// Выводит размер следующих переменных:
+// 1. sizeof(c) - размер символьной переменной 'c'
+// 2. sizeof(uc) - размер указательной переменной 'uc'
+// 3. sizeof(i) - размер целочисленной переменной 'i'
+// 4. sizeof(u) - размер указательной переменной 'u'
+// 5. sizeof(s) - размер строковой переменной 's'
+// 6. sizeof(l) - размер целочисленной переменной 'l'
+// 7. sizeof(f) - размер вещественной переменной 'f'
+// 8. sizeof(d) - размер целочисленной переменной 'd'
+
  uc=c=CHAR_MAX;
  printf("CHAR_MAX : c=%d uc=%d\n", c, uc);
  c++; uc++;
+
+// Присваивает значения к переменным 'c' и 'uc' соответственно к максимальному значению для символьных переменных
+// Выводит значения переменных 'c' и 'uc'
+// Инкрементирует значения переменных 'c' и 'uc'
 
  printf("CHAR_MAX+1 : c=%d uc=%d\n", c, uc);
  uc=c=CHAR_MIN;
@@ -35,8 +49,7 @@ sizeof(l), sizeof(f), sizeof(d));
  uc=c=-5;
  printf("-5 : c=%d uc=%d\n", c, uc);
  c=-5; uc=5;
- printf("char and unsigned char -5>5 : %d\n\n",
- c>uc);
+ printf("char and unsigned char -5>5 : %d\n\n", c>uc);
  c=s=SHRT_MAX;
 
  uc=s;
@@ -62,17 +75,23 @@ sizeof(l), sizeof(f), sizeof(d));
 
  i=u; l=u;
  printf("UINT_MAX : i=%d u=%u l=%ld\n", i, u, l);
+
  u=i=-5;
  printf("-5 : i=%d u=%u\n", i, u);
+
  i=-5; u=5;
  printf("int and unsigned int -5>5 : %d\n", i>u);
+
  c=-5; u=5;
  printf("char and unsigned int -5>5 : %d\n\n",
  c>u);
+
  i=5.1;
  printf("i=5.1 : i=%d\n", i);
+
  i=5.9;
  printf("i=5.9 : i=%d\n", i);
+
  d=f=FLT_MAX;
 
  printf("FLT_MAX : f=%g d=%g\n", f, d);
@@ -83,8 +102,10 @@ sizeof(l), sizeof(f), sizeof(d));
 
  printf("FLT_EPSILON : f=%g d=%g\n", f, d);
  f=1e10;
+
  printf("1e10 : f=%f\n", f);
  f=1e11;
+
  printf("1e11 : f=%f\n", f);
  f=1234567890;
 

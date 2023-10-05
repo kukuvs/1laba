@@ -2,8 +2,8 @@
 
 int main(void) {
     double a = 5;
-    double b, c = 5;
-    int d;
+    double b;
+    int d, c = 5;
 
     printf("Введите значение b: ");
     scanf("%lf", &b);
@@ -14,19 +14,19 @@ int main(void) {
     c = c + 1;
     d = c - a + d;
 
-    printf("a=%lf, b=%lf, c=%lf, d=%d\n", a, b, c, d);
+    printf("a=%lf, b=%lf, c=%d, d=%d\n", a, b, c, d);
 
     a = a * c;
     c = c - 1;
 
-    printf("a=%lf, b=%lf, c=%lf, d=%d\n", a, b, c, d);
+    printf("a=%lf, b=%lf, c=%d, d=%d\n", a, b, c, d);
 
     a = a / 10;
     c = c / 2;
     b = b - 1;
     d = d * (c + b + a);
 
-    printf("a=%lf, b=%lf, c=%lf, d=%d\n", a, b, c, d);
+    printf("a=%lf, b=%lf, c=%d, d=%d\n", a, b, c, d);
 
     return 0;
 }
