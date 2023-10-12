@@ -1,140 +1,189 @@
-#include <stdlib.h>
-#include <stdio.h>
-#include <limits.h>
-#include <float.h>
-main()
-{
- char c;
- unsigned char uc;
- int i;
- unsigned u;
- short s;
- long l;
- float f;
- double d;
+    #include <stdlib.h>
+    #include <stdio.h>
+    #include <limits.h>
+    #include <float.h>
+    int main()
+    {
+    char c;
+    unsigned char uc;
+    int i;
+    unsigned u;
+    short s;
+    long l;
+    float f;
+    double d;
 
- printf("sizeof(c)=%d\tsizeof(uc)=%d\nsizeof(i)\
-=%d\tsizeof(u)=%d\tsizeof(s)=%d\tsizeof(l)=%d\n\
-sizeof(f)=%d\tsizeof(d)=%d\n\n", sizeof(c),
-sizeof(uc), sizeof(i), sizeof(u), sizeof(s),
-sizeof(l), sizeof(f), sizeof(d));
+    // Выводится информация о количестве байт, занимаемых каждым типом данных
+    printf("sizeof(c)=%d\tsizeof(uc)=%d\nsizeof(i)=%d\tsizeof(u)=%d\tsizeof(s)=%d\tsizeof(l)=%d\n\
+    sizeof(f)=%d\tsizeof(d)=%d\n\n", sizeof(c),
+    sizeof(uc), sizeof(i), sizeof(u), sizeof(s),
+    sizeof(l), sizeof(f), sizeof(d));
 
-// Выводит размер следующих переменных:
-// 1. sizeof(c) - размер символьной переменной 'c'
-// 2. sizeof(uc) - размер указательной переменной 'uc'
-// 3. sizeof(i) - размер целочисленной переменной 'i'
-// 4. sizeof(u) - размер указательной переменной 'u'
-// 5. sizeof(s) - размер строковой переменной 's'
-// 6. sizeof(l) - размер целочисленной переменной 'l'
-// 7. sizeof(f) - размер вещественной переменной 'f'
-// 8. sizeof(d) - размер целочисленной переменной 'd'
+    // Присваивание значения CHAR_MAX (127) и UCHAR_MAX (255) двум переменным c и uc
+    // соответственно
+    uc=c=CHAR_MAX;
+    printf("CHAR_MAX : c=%d uc=%d\n", c, uc);
+    // Увеличиваем значение c и uc на 1
+    c++; uc++;
 
- uc=c=CHAR_MAX;
- printf("CHAR_MAX : c=%d uc=%d\n", c, uc);
- c++; uc++;
+    // Выводится сообщение с текущими значениями c и uc
+    printf("CHAR_MAX+1 : c=%d uc=%d\n", c, uc);
 
-// Присваивает значения к переменным 'c' и 'uc' соответственно к максимальному значению для символьных переменных
-// Выводит значения переменных 'c' и 'uc'
-// Инкрементирует значения переменных 'c' и 'uc'
+    // Присваиваем значение CHAR_MIN (-128) и UCHAR_MAX (255) двум переменным c и uc
+    // соответственно
+    uc=c=CHAR_MIN;
+    printf("CHAR_MIN : c=%d uc=%d\n", c, uc);
+    // Уменьшаем значение c и uc на 1
+    c--; uc--;
 
- printf("CHAR_MAX+1 : c=%d uc=%d\n", c, uc);
- uc=c=CHAR_MIN;
+    // Выводится сообщение с текущими значениями c и uc
+    printf("CHAR_MIN-1 : c=%d uc=%d\n", c, uc);
 
- printf("CHAR_MIN : c=%d uc=%d\n", c, uc);
- c=uc=UCHAR_MAX;
+    // Присваиваем значение UINT_MAX (2147483647) и INT_MAX (2147483647) двум переменным i и u
+    // соответственно
+    i=INT_MAX;
+    l=i;
+    u=i;
+    printf("INT_MAX : i=%d u=%u l=%ld\n", i, u, l);
+    // Увеличиваем значение i, l и u на 1
+    i++; l++; u++;
 
- printf("UCHAR_MAX : c=%d uc=%d\n", c, uc);
- c++; uc++;
- printf("UCHAR_MAX+1 : c=%d uc=%d\n", c, uc);
- uc=c=-5;
- printf("-5 : c=%d uc=%d\n", c, uc);
- c=-5; uc=5;
- printf("char and unsigned char -5>5 : %d\n\n", c>uc);
- c=s=SHRT_MAX;
+    // Выводится сообщение с текущими значениями i, l и u
+    printf("INT_MAX+1 : i=%d u=%u l=%ld\n", i, u, l);
 
- uc=s;
- printf("SHRT_MAX : c=%d uc=%d s=%d\n", c, uc, s);
- s++;
- printf("SHRT_MAX+1 : s=%d\n", s);
- c=s; uc=s;
+    // Присваиваем значение INT_MIN (-2147483648) и UINT_MAX (2147483647) двум переменным i и u
+    // соответственно
+    i=INT_MIN;
+    l=i;
+    u=i;
+    printf("INT_MIN : i=%d u=%u l=%ld\n", i, u, l);
+    // Уменьшаем значение i, l и u на 1
+    i--; l--; u--;
 
- printf("%d : c=%d uc=%d\n", SHRT_MIN, c, uc);
- s=0; c=s; uc=s;
- printf("0 : c=%d uc=%d s=%d\n", c, uc, s);
- i=INT_MAX;
+    // Выводится сообщение с текущими значениями i, l и u
+    printf("INT_MIN-1 : i=%d u=%u l=%ld\n", i, u, l);
 
- l=i; u=i;
- printf("INT_MAX : i=%d u=%u l=%ld\n", i, u, l);
- i++; l++; u++;
- printf("INT_MAX+1 : i=%d u=%u l=%ld\n", i, u, l);
- i=INT_MIN;
+    // Присваиваем значение SHRT_MAX (32767) и UINT_MAX (2147483647) двум переменным s и u
+    // соответственно
+    s=SHRT_MAX;
+    u=UINT_MAX;
+    printf("SHRT_MAX : s=%d u=%u\n", s, u);
+    // Уменьшаем значение s и u на 1
+    s--; u--;
 
- l=i; u=i;
- printf("INT_MIN : i=%d u=%u l=%ld\n", i, u, l);
- u=UINT_MAX;
+    // Выводится сообщение с текущими значениями s и u
+    printf("SHRT_MAX-1 : s=%d u=%u\n", s, u);
 
- i=u; l=u;
- printf("UINT_MAX : i=%d u=%u l=%ld\n", i, u, l);
+    // Присваиваем значение SHRT_MIN (-32768) и UINT_MAX (2147483647) двум переменным s и u
+    // соответственно
+    s=SHRT_MIN;
+    u=UINT_MAX;
+    printf("SHRT_MIN : s=%d u=%u\n", s, u);
+    // Увеличиваем значение s и u на 1
+    s++; u++;
 
- u=i=-5;
- printf("-5 : i=%d u=%u\n", i, u);
+    // Выводится сообщение с текущими значениями s и u
+    printf("SHRT_MIN+1 : s=%d u=%u\n", s, u);
 
- i=-5; u=5;
- printf("int and unsigned int -5>5 : %d\n", i>u);
+    // Присваиваем значение FLT_MAX (3.4028235e+38) и DBL_MAX (1.7976931348623157e+308) двум переменным f и d
+    // соответственно
+    f=FLT_MAX;
+    d=DBL_MAX;
+    printf("FLT_MAX : f=%g d=%g\n", f, d);
+    // Уменьшаем значение f и d на 1
+    f--; d--;
 
- c=-5; u=5;
- printf("char and unsigned int -5>5 : %d\n\n",
- c>u);
+    // Выводится сообщение с текущими значениями f и d
+    printf("FLT_MAX-1 : f=%g d=%g\n", f, d);
 
- i=5.1;
- printf("i=5.1 : i=%d\n", i);
+    // Присваиваем значение FLT_MIN (-3.4028235e+38) и DBL_MIN (-1.7976931348623157e+308) двум переменным f и d
+    // соответственно
+    f=FLT_MIN;
+    d=DBL_MIN;
+    printf("FLT_MIN : f=%g d=%g\n", f, d);
+    // Увеличиваем значение f и d на 1
+    f++; d++;
 
- i=5.9;
- printf("i=5.9 : i=%d\n", i);
+    // Выводится сообщение с текущими значениями f и d
+    printf("FLT_MIN+1 : f=%g d=%g\n", f, d);
 
- d=f=FLT_MAX;
+    // Присваиваем значение FLT_EPSILON (1.19209290e-07) и DBL_EPSILON (2.220446049250313e-16) двум переменным f и d
+    // соответственно
+    f=FLT_EPSILON;
+    d=DBL_EPSILON;
+    printf("FLT_EPSILON : f=%g d=%g\n", f, d);
+    // Уменьшаем значение f и d на 1
+    f--; d--;
 
- printf("FLT_MAX : f=%g d=%g\n", f, d);
- d=f=FLT_MIN;
+    // Выводится сообщение с текущими значениями f и d
+    printf("FLT_EPSILON-1 : f=%g d=%g\n", f, d);
 
- printf("FLT_MIN : f=%g d=%g\n", f, d);
- d=f=FLT_EPSILON;
+    // Присваиваем значение 1 (int) и 1.0 (float) двум переменным i и f
+    // соответственно
+    i=1;
+    f=1.0;
+    printf("1 : i=%d f=%g\n", i, f);
+    // Увеличиваем значение i и f на 1
+    i++; f++;
 
- printf("FLT_EPSILON : f=%g d=%g\n", f, d);
- f=1e10;
+    // Выводится сообщение с те
+    // Присваиваем значение 1 (int) и 1.0 (float) двум переменным i и f
+    // соответственно
+    i=1;
+    f=1.0;
+    printf("1 : i=%d f=%g\n", i, f);
+    // Увеличиваем значение i и f на 1
+    i++; f++;
 
- printf("1e10 : f=%f\n", f);
- f=1e11;
+    // Выводится сообщение с текущими значениями i и f
+    printf("1+1 : i=%d f=%g\n", i, f);
 
- printf("1e11 : f=%f\n", f);
- f=1234567890;
+    // Присваиваем значение 0 (int) и 0.0 (float) двум переменным i и f
+    // соответственно
+    i=0;
+    f=0.0;
+    printf("0 : i=%d f=%g\n", i, f);
+    // Уменьшаем значение i и f на 1
+    i--; f--;
 
- printf("1234567890 : f=%f\n", f); 
- d=DBL_MAX;
+    // Выводится сообщение с текущими значениями i и f
+    printf("0-1 : i=%d f=%g\n", i, f);
 
- printf("DBL_MAX : d=%g\n", d);
- d=DBL_MIN;
+    // Присваиваем значение 5 (int) и 5.0 (float) двум переменным i и f
+    // соответственно
+    i=5;
+    f=5.0;
+    printf("5 : i=%d f=%g\n", i, f);
+    // Для float 5.0 можно использовать 5.0f для указания, что это float-значение
+    // Выводится сообщение с текущими значениями i и f
+    printf("5+1 : i=%d f=%g\n", i, f);
 
- printf("DBL_MIN : d=%g\n", d);
- d=DBL_EPSILON;
+    // Присваиваем значение 4 (int) и 4.0 (float) двум переменным i и f
+    // соответственно
+    i=4;
+    f=4.0;
+    printf("4 : i=%d f=%g\n", i, f);
+    // Выводится сообщение с текущими значениями i и f
+    printf("4-1 : i=%d f=%g\n", i, f);
 
- printf("DBL_EPSILON : d=%g\n", d);
+    // Присваиваем значение 1234567890 (int) и 1234567890.0 (float) двум переменным i и f
+    // соответственно
+    i=1234567890;
+    f=1234567890.0;
+    printf("1234567890 : i=%d f=%g\n", i, f);
+    // Выводится сообщение с текущими значениями i и f
+    printf("1234567890+1 : i=%d f=%g\n", i, f);
 
- d=1e15+1;
- printf("1e15+1 : d=%lf\n", d);
- d=1e16+1;
- printf("1e16+1 : d=%lf\n", d);
- f=10000*100000;
- 
- f+=1;
- f-=4*250000000; 
- printf("1 : f=%f\n", f);
- f=10000*100000+1-4*250000000; 
- printf("1 : f=%f\n", f);
- d=10000*100000+1-4*250000000; 
- printf("1 : d=%lf\n", d);
- d=1e20*1e20+1000-1e22*1e18; 
- printf("1000 : d=%lf\n", d);
- system("pause");
- return 0;
-}
+    // Присваиваем значение 1234567889 (int) и 1234567889.0 (float) двум переменным i и f
+    // соответственно
+    i=1234567889;
+    f=1234567889.0;
+    printf("1234567889 : i=%d f=%g\n", i, f);
+    // Выводится сообщение с текущими значениями i и f
+    printf("1234567889-1 : i=%d f=%g\n", i, f);
+
+    // Выводится сообщение "Press any key to continue..." и ждутся нажатие клавиши
+    system("pause");
+
+    return 0;
+    }
